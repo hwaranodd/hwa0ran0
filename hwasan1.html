@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hwasan No.1 — Hwa Ran</title>
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        /* ========================
+           HWASAN PAGE
+        ======================== */
+
+        .hwasan-page {
+            min-height: calc(100vh - var(--nav-h));
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 48px 120px;
+        }
+
+        /* BREADCRUMB */
+        .hw-breadcrumb {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 100, 0.4);
+            margin-bottom: 56px;
+            text-transform: lowercase;
+        }
+
+        .hw-breadcrumb a {
+            color: rgba(0, 255, 100, 0.4);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .hw-breadcrumb a:hover {
+            color: #00ff64;
+        }
+
+        .hw-breadcrumb span {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        /* TOP META */
+        .hw-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .hw-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #00ff64;
+            text-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+            text-transform: uppercase;
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            padding: 4px 10px;
+            border-radius: 2px;
+        }
+
+        .hw-collab {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 100, 0.45);
+            text-transform: lowercase;
+        }
+
+        /* MAIN TITLE */
+        .hw-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.08;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .hw-title-sub {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #00ff64;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.5),
+                         0 0 28px rgba(0, 255, 100, 0.2);
+            text-transform: uppercase;
+            margin-bottom: 48px;
+        }
+
+        /* DIVIDER */
+        .hw-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                rgba(0, 255, 100, 0.3),
+                rgba(0, 255, 100, 0.05)
+            );
+            margin: 48px 0;
+        }
+
+        /* ORIGIN BLOCK */
+        .hw-origin {
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+
+        .hw-origin-col {
+            flex: 1;
+        }
+
+        .hw-origin-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: rgba(0, 255, 100, 0.5);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hw-origin-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .hw-origin-role {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--muted);
+            text-transform: lowercase;
+        }
+
+        .hw-origin-plus {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 20px;
+            color: rgba(0, 255, 100, 0.4);
+            padding-top: 28px;
+            flex-shrink: 0;
+        }
+
+        /* BODY TEXT */
+        .hw-body {
+            margin-top: 0;
+        }
+
+        .hw-intro {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+
+        /* PHOTO PAIR */
+        .hw-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hw-photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            aspect-ratio: 3/4;
+            background: #111;
+        }
+
+        .hw-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(20%) contrast(1.05);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .hw-photo:hover img {
+            transform: scale(1.03);
+            filter: grayscale(0%) contrast(1.05);
+        }
+
+        .hw-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(0, 255, 100, 0);
+            border-radius: 2px;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            pointer-events: none;
+        }
+
+        .hw-photo:hover::after {
+            border-color: rgba(0, 255, 100, 0.25);
+            box-shadow: inset 0 0 20px rgba(0, 255, 100, 0.04);
+        }
+
+        .hw-photo-caption {
+            margin-top: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 100, 0.35);
+            text-transform: lowercase;
+            text-align: center;
+        }
+
+        /* STATEMENT BLOCK */
+        .hw-statement {
+            border-left: 2px solid rgba(0, 255, 100, 0.3);
+            padding: 32px 36px;
+            background: rgba(0, 255, 100, 0.02);
+            margin-bottom: 48px;
+        }
+
+        .hw-statement-eyebrow {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: rgba(0, 255, 100, 0.5);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hw-statement-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+
+        .hw-statement p {
+            font-size: 14px;
+            line-height: 1.95;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .hw-statement p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CLOSING LINES */
+        .hw-closing {
+            margin-top: 48px;
+        }
+
+        .hw-closing-line {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 100, 0.6);
+            text-shadow: 0 0 8px rgba(0, 255, 100, 0.3);
+            line-height: 2.2;
+            text-transform: lowercase;
+        }
+
+        .hw-closing-line.bright {
+            color: #00ff64;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.6),
+                         0 0 24px rgba(0, 255, 100, 0.2);
+        }
+
+        /* BACK LINK */
+        .hw-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 72px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 100, 0.4);
+            text-decoration: none;
+            text-transform: lowercase;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+
+        .hw-back:hover {
+            color: #00ff64;
+            text-shadow: 0 0 8px rgba(0, 255, 100, 0.5);
+        }
+
+        .hw-back::before {
+            content: '←';
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hwasan-page {
+                padding: 48px 24px 80px;
+            }
+
+            .hw-origin {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .hw-origin-plus {
+                padding-top: 0;
+            }
+
+            .hw-statement {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menu-toggle">
+
+<header>
+    <nav class="navbar">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="sidebar">
+    <h3>Hwa Ran</h3>
+    <ul>
+        <li><a href="https://www.instagram.com/hwa.ran_tattoo/" target="_blank">Instagram</a></li>
+        <li>Artworks</li>
+        <li>Contact</li>
+    </ul>
+
+    <div class="sidebar-projects">
+        <input type="checkbox" id="proj-toggle" checked>
+        <label for="proj-toggle" class="proj-header">
+            <span class="proj-arrow">▶</span>
+            <span class="proj-title">// projects</span>
+        </label>
+        <ul class="proj-list">
+            <li><a href="hwasan1.html" class="proj-active">— hwasan1</a></li>
+        </ul>
+    </div>
+</aside>
+
+<label for="menu-toggle" class="overlay"></label>
+
+<main class="main-content">
+    <div class="hwasan-page fade-in">
+
+        <!-- BREADCRUMB -->
+        <p class="hw-breadcrumb">
+            <a href="index.html">home</a>
+            <span>/</span>
+            projects
+            <span>/</span>
+            hwasan1
+        </p>
+
+        <!-- META -->
+        <div class="hw-meta">
+            <span class="hw-tag">Project No.1</span>
+            <span class="hw-collab">collaboration</span>
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="hw-title">Hwaran × SAN</h1>
+        <p class="hw-title-sub">화산 &nbsp;—&nbsp; </p>
+
+        <!-- ORIGIN -->
+        <div class="hw-origin">
+            <div class="hw-origin-col">
+                <p class="hw-origin-label">artist</p>
+                <p class="hw-origin-name">Hwa Ran</p>
+                <p class="hw-origin-role">tattoo artist</p>
+            </div>
+            <div class="hw-origin-plus">×</div>
+            <div class="hw-origin-col">
+                <p class="hw-origin-label">concept</p>
+                <p class="hw-origin-name">SAN</p>
+                <p class="hw-origin-role">computer nerd</p>
+            </div>
+        </div>
+
+        <div class="hw-divider"></div>
+
+        <!-- INTRO -->
+        <p class="hw-intro">
+            두 사람의 아이디어가 만났다. 화란의 선과 SAN의 구조.
+            커스텀 디자인이 하나의 프로젝트가 되었고, 그 이름이 화산이 되었다.
+            
+        </p>
+
+        <!-- PHOTOS -->
+        <div class="hw-photos">
+            <div>
+                <div class="hw-photo">
+                    <img src="img/hs2.jpeg" alt="Hwasan tattoo 1">
+                </div>
+                <p class="hw-photo-caption">// 01</p>
+            </div>
+            <div>
+                <div class="hw-photo">
+                    <img src="img/hs1.jpeg" alt="Hwasan tattoo 2">
+                </div>
+                <p class="hw-photo-caption">// 02</p>
+            </div>
+        </div>
+
+        <!-- STATEMENT -->
+        <div class="hw-statement">
+            <p class="hw-statement-eyebrow">// artist statement</p>
+            <h2 class="hw-statement-title">
+                Hwasan — No. 1
+                <span class="hw-math">11<sub>(10)</sub> = 3<sub>(2)</sub></span>
+            </h2>
+
+            <p>
+                prime in any base.<br>
+                11 — or 3, depending on how you read it.
+            </p>
+            <p>
+                Two numbers. Two systems. Both prime.
+                The kind of truth that doesn't change no matter what language you use to count.
+            </p>
+        
+        <!--  -->
+        <p>
+            The 11 is mirrored. I see it inverted. The world reads it straight.
+            Abraxas lives in that gap — <strong class="hw-nand">NAND</strong>.<br>
+            The gate that is neither one nor the other, but contains both.<br>
+            Universal. Irreducible. The only logic you need.
+        </p>
+
+        <!-- -->
+        <div class="hw-nand-block">
+            <div class="hw-nand-symbol">
+                <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 10 L20 70 L60 70 Q100 70 100 40 Q100 10 60 10 Z"
+                        fill="none" stroke="#00ff64" stroke-width="2"/>
+                    <circle cx="106" cy="40" r="6"
+                            fill="none" stroke="#00ff64" stroke-width="2"/>
+                    <line x1="0" y1="25" x2="20" y2="25"
+                        stroke="#00ff64" stroke-width="2"/>
+                    <line x1="0" y1="55" x2="20" y2="55"
+                        stroke="#00ff64" stroke-width="2"/>
+                    <line x1="112" y1="40" x2="130" y2="40"
+                        stroke="#00ff64" stroke-width="2"/>
+                    <text x="3" y="22" fill="rgba(0,255,100,0.5)" font-family="monospace" font-size="10">A</text>
+                    <text x="3" y="52" fill="rgba(0,255,100,0.5)" font-family="monospace" font-size="10">B</text>
+                </svg>
+            </div>
+
+            <div class="hw-truth-table">
+                <div class="hw-tt-row header">
+                    <span>A</span><span>B</span><span>OUT</span>
+                </div>
+                <div class="hw-tt-row"><span>0</span><span>0</span><span class="bright">1</span></div>
+                <div class="hw-tt-row"><span>0</span><span>1</span><span class="bright">1</span></div>
+                <div class="hw-tt-row"><span>1</span><span>0</span><span class="bright">1</span></div>
+                <div class="hw-tt-row last"><span>1</span><span>1</span><span class="dim">0</span></div>
+            </div>
+</div>
+            <p>
+                This is a mark for the ones who are still breaking through.
+            </p>
+        </div>
+
+        <!-- CLOSING -->
+        <div class="hw-closing">
+            <p class="hw-closing-line">some things can't be named.</p>
+            <p class="hw-closing-line bright">only marked.</p>
+        </div>
+
+        <!-- BACK -->
+        <a href="index.html" class="hw-back">back to home</a>
+
+    </div>
+</main>
+
+<footer class="bottom-banner">
+    <p>&copy; 2026 HwaRan</p>
+</footer>
+
+</body>
+</html>
