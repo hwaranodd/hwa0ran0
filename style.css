@@ -1185,6 +1185,12 @@ header {
     gap: 14px;
 }
 
+.about-link,
+.about-link-inline,
+.nav-links a {
+    color: inherit;
+}
+
 .about-link:visited,
 .about-link-inline:visited,
 .nav-links a:visited {
