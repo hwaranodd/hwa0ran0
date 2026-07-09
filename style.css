@@ -431,6 +431,11 @@ header {
     .booking {
         padding: 48px 20px;
     }
+   
+   .booking-info,
+    .contact-methods {
+        padding: 22px 20px;
+    }
 }
 
 
@@ -1195,4 +1200,123 @@ header {
 .about-link-inline:visited,
 .nav-links a:visited {
     color: inherit;
+}
+
+/* BOOKING: HOW-TO-BOOK & CONTACT */
+.booking-info,
+.contact-methods {
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 28px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.booking-info h3,
+.contact-methods h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 18px;
+}
+
+.booking-info ol {
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.booking-info ol > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.booking-info ol > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    font-size: 11px;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-info ol > li > ul {
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.booking-info ol > li > ul li {
+    font-size: 13px;
+    color: var(--muted);
+    padding-left: 16px;
+    position: relative;
+}
+
+.booking-info ol > li > ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.contact-methods ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-methods li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.contact-methods strong {
+    color: var(--text);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.contact-methods a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.contact-methods a:hover {
+    border-color: var(--accent);
+}
+
+.qr-area {
+    text-align: center;
+}
+
+.qr-area img {
+    width: 200px;
+    max-width: 80%;
+    border-radius: 4px;
+    box-shadow: 0 0 40px rgba(200,169,126,0.12);
+    margin-bottom: 16px;
 }
