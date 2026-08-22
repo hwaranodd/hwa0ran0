@@ -16,9 +16,9 @@
 
     <link rel="alternate" hreflang="en" href="https://hwaran-tattoo.com/index.html">
     <link rel="alternate" hreflang="ko" href="https://hwaran-tattoo.com/ko/index.html">
-    <link rel="alternate" hreflang="x-default" href="https://hwaran-tattoo.com/index.html"> 
+    <link rel="alternate" hreflang="x-default" href="https://hwaran-tattoo.com/index.html">
 
-   
+    <title>Hwa Ran</title>
     <link rel="icon" href="../favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
@@ -34,11 +34,11 @@
     <nav class="navbar">
         <label for="menu-toggle" class="menu-icon">☰</label>
         <ul class="nav-links">
-            <li><a href="../booking.html" class="lang-switch">English</a></li>
-            <li><a href="index.html">홈</a></li>
+            <li><a href="../index.html" class="lang-switch">English</a></li>
+            <li><a href="index.html" class="active">홈</a></li>
             <li><a href="about.html">소개</a></li>
             <li><a href="portfolio.html">포트폴리오</a></li>
-            <li><a href="booking.html" class="active">예약</a></li>
+            <li><a href="booking.html">예약</a></li>
         </ul>
     </nav>
 </header>
@@ -50,7 +50,6 @@
         <!-- This is a comment 
         <li>Artworks</li>
         <li>Contact</li>
-        
         -->
                 <!-- Projects Section -->
         <div class="sidebar-projects">
@@ -70,48 +69,60 @@
 <label for="menu-toggle" class="overlay"></label>
 
 <main class="main-content">
-    <section class="booking fade-in">
-     <h2>예약</h2>
-        <div class="booking-info">
-            <h3>예약 방법</h3>
-            <ol>
-                <li>인스타그램 DM, 이메일, 또는 오픈카카오톡으로 연락주세요.</li>
-                <li>메시지에 다음 내용을 포함해 주세요:
-                    <ul>
-                        <li>대략적인 크기 (cm 기준)</li>
-                        <li>시술 위치 (예: 팔뚝, 어깨, 종아리)</li>
-                        <li>레퍼런스 이미지 또는 원하시는 디자인에 대한 간단한 설명</li>
-                        <li>희망하시는 날짜가 있다면 함께 적어주세요</li>
-                    </ul>
-                </li>
-                <li>예약 가능 여부와 다음 단계를 안내해 드리겠습니다.</li>
-            </ol>
+    <section class="hero">
+        <div class="hero-bg" style="background-image:url('../img/wk7.jpeg')"></div>
+
+        <div class="hero-text fade-in">
+            <h1>
+            동양적인.<br>
+            플로럴한.<br>
+            개인적인.
+            </h1>
+            <h2 class="hero-subtitle">타투이스트 &nbsp;/&nbsp; 대전, 대한민국</h2>
+
+            <p class="hero-seo">화란(Hwa Ran)은 동양적, 플로럴, 추상, 수묵화풍의 커스텀 타투를 전문으로 하는 한국의 타투이스트입니다.</p>
+            <div class="hero-buttons">
+                <a href="booking.html">예약하기</a>
+                <a href="portfolio.html">작품 보기</a>
+            </div>
+            <div class="scroll-down">↓ 스크롤</div>
         </div>
+    </section>
 
-        <div class="contact-methods">
-            <h3>연락처</h3>
-            <ul>
-                <li><strong>인스타그램 DM:</strong> <a href="https://www.instagram.com/hwa.ran_tattoo/" target="_blank">@hwa.ran_tattoo</a></li>
-                <li><strong>이메일:</strong> <a href="mailto:hwa0ran0@gmail.com">hwa0ran0@gmail.com</a></li>
-                <li><strong>오픈카카오톡:</strong> 아래 QR코드를 스캔해 주세요</li>
-            </ul>
+
+<section class="specialties">
+    <p class="section-eyebrow">작업 분야</p>
+    <div class="specialties-grid">
+        <div class="specialty-card">
+            <h3>오리엔탈</h3>
+            <p>전통적인 동양 문양을 현대적인 라인으로 재해석합니다.</p>
         </div>
-
-        <div class="qr-area">
-            <img src="../img/qr.jpeg" alt="카카오톡 QR 코드"/>
+        <div class="specialty-card">
+            <h3>플로럴</h3>
+            <p>몸의 곡선을 따라 흐르는 섬세한 식물 디자인.</p>
         </div>
+        <div class="specialty-card">
+            <h3>추상</h3>
+            <p>대담한 대비와 자유로운 구성의 표현적인 작업.</p>
+        </div>
+        <div class="specialty-card">
+            <h3>수묵</h3>
+            <p>수묵화에 뿌리를 둔 붓터치 스타일의 타투.</p>
+        </div>
+    </div>
+</section>
 
-   <form class="booking-form"
-              action="mailto:hwa0ran0@gmail.com"
-              method="post"
-              enctype="text/plain">
+    <section class="philosophy">
+        <blockquote class="quote">
+            <p>드로잉은 타투 이전의 단계가 아니라, 전체 과정에서 없어서는 안 될 부분입니다 — 모든 선에는 의도와 정성이 담겨 있습니다.</p>
+            <footer>— 화란</footer>
+        </blockquote>
+    </section>
 
-            <input type="text"  placeholder="이름"  required>
-            <input type="email" placeholder="이메일" required>
-            <textarea placeholder="타투 아이디어, 대략적인 크기(cm), 시술 위치를 적어주세요..." rows="6" required></textarea>
-            <button type="submit">요청 보내기</button>
-        </form>
-
+    <section class="cta-banner">
+        <h2>당신만의 작품을 시작할 준비가 되셨나요?</h2>
+        <p>당신을 위해 디자인하는 커스텀 오리엔탈, 플로럴, 수묵 타투.</p>
+        <a href="booking.html" class="cta-button">예약하기</a>
     </section>
 
 </main>
