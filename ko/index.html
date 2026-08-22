@@ -18,6 +18,19 @@
     <link rel="alternate" hreflang="ko" href="https://hwaran-tattoo.com/ko/index.html">
     <link rel="alternate" hreflang="x-default" href="https://hwaran-tattoo.com/index.html">
 
+        <script>
+    (function(){
+      try {
+        var pref = localStorage.getItem('hr_lang');
+        if (pref === 'en') {
+          location.replace('../' + location.pathname.split('/').pop());
+          return;
+        }
+    
+      } catch(e) {}
+    })();
+    </script>
+
     <title>Hwa Ran</title>
     <link rel="icon" href="../favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
@@ -34,7 +47,7 @@
     <nav class="navbar">
         <label for="menu-toggle" class="menu-icon">☰</label>
         <ul class="nav-links">
-            <li><a href="../index.html" class="lang-switch">English</a></li>
+            <li><a href="../index.html" class="lang-switch"onclick="localStorage.setItem('hr_lang','en')">English</a></li>
             <li><a href="index.html" class="active">홈</a></li>
             <li><a href="about.html">소개</a></li>
             <li><a href="portfolio.html">포트폴리오</a></li>
