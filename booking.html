@@ -17,6 +17,28 @@
     <link rel="alternate" hreflang="en" href="https://hwaran-tattoo.com/booking.html">
     <link rel="alternate" hreflang="ko" href="https://hwaran-tattoo.com/ko/booking.html">
     <link rel="alternate" hreflang="x-default" href="https://hwaran-tattoo.com/booking.html">
+
+        <script>
+    (function(){
+      try {
+        var pref = localStorage.getItem('hr_lang');
+        if (pref === 'ko') {
+          location.replace('ko/' + location.pathname.split('/').pop());
+          return;
+        }
+        if (!pref) {
+          fetch('https://ipapi.co/json/', { cache: 'no-store' })
+            .then(function(r){ return r.json(); })
+            .then(function(d){
+              if (d && d.country_code === 'KR') {
+                location.replace('ko/' + location.pathname.split('/').pop());
+              }
+            })
+            .catch(function(){});
+        }
+      } catch(e) {}
+    })();
+    </script>
     
     <title>Booking | Hwa Ran</title>
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -34,7 +56,7 @@
     <nav class="navbar">
         <label for="menu-toggle" class="menu-icon">☰</label>
         <ul class="nav-links">
-            <li><a href="ko/booking.html" class="lang-switch">한국어</a></li>
+            <li><a href="ko/booking.html" class="lang-switch" onclick="localStorage.setItem('hr_lang','ko')">한국어</a></li>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
