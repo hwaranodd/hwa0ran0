@@ -133,7 +133,7 @@ header {
     border-right: 1px solid var(--border);
 
     padding: 32px 28px;
-    padding-top: calc(var(--nav-h) + 32px);   /* ✅ nav 높이 아래서 시작 */
+    padding-top: calc(var(--nav-h) + 32px); 
 
     transform: translateX(-260px);
     transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
@@ -149,7 +149,7 @@ header {
 /* SIDEBAR TITLE */
 .sidebar h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;          /* ✅ 글씨 크게 */
+    font-size: 22px;          
     font-weight: 300;
     letter-spacing: 3px;
     color: var(--accent);
@@ -261,11 +261,11 @@ header {
 }
 
 .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(52px, 8vw, 96px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.15;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.25;
     letter-spacing: -0.5px;
     color: var(--text);
 }
@@ -492,11 +492,11 @@ header {
 }
 
 .about-text-col h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.1;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.25;
     margin-bottom: 40px;
     color: var(--text);
 }
@@ -561,10 +561,10 @@ header {
 }
 
 .portfolio h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 48px;
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 600;
+    font-style: normal;
     margin-bottom: 12px;
 }
 
@@ -609,10 +609,10 @@ header {
 }
 
 .booking h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    font-style: normal;
     margin-bottom: 12px;
 }
 
