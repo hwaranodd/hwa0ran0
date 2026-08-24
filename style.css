@@ -663,7 +663,7 @@ header {
 .booking-form input::placeholder,
 .booking-form textarea::placeholder {
     color: var(--muted);
-    font-style: italic;
+    font-style: normal;
     font-size: 13px;
 }
 
@@ -1062,7 +1062,7 @@ header {
 
 .hero-seo {
     margin-top: 12px;
-    max-width: 480px;
+    max-width: 560px;
     font-size: 13px;
     letter-spacing: 0.5px;
     text-transform: none;
@@ -1107,10 +1107,10 @@ header {
 }
 
 .specialty-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
     color: var(--text);
     margin-bottom: 12px;
 }
@@ -1147,7 +1147,7 @@ header {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: var(--text);
     margin-bottom: 16px;
 }
@@ -1219,7 +1219,7 @@ header {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     color: var(--accent);
     margin-bottom: 18px;
 }
