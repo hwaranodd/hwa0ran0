@@ -1321,3 +1321,52 @@ header {
     box-shadow: 0 0 40px rgba(200,169,126,0.12);
     margin-bottom: 16px;
 }
+/* =========================
+animation overall
+========================= */
+/* floating petals */
+#petalContainer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  width: 14px;
+  height: 20px;
+  background: linear-gradient(
+    160deg,
+    #c8a97e,
+    rgba(200,169,126,0.15)
+  );
+  border-radius: 0 100% 0 100%;
+  opacity: 0.55;
+  animation: floatPetal linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translateY(-10vh) translateX(0)
+               rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(60px)
+               rotate(340deg) rotateY(360deg);
+    opacity: 0;
+  }
+}
