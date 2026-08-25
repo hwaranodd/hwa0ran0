@@ -40,6 +40,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css"/>
 
+    <div id="petalContainer"></div>
+    
+    <script>
+    const container = document.getElementById('petalContainer');
+    
+    const PETAL_COUNT = 18;
+    
+    for (let i = 0; i < PETAL_COUNT; i++) {
+      const p = document.createElement('div');
+    
+      p.className = 'petal';
+    
+      const left = Math.random() * 100;
+      const duration = 10 + Math.random() * 10;
+      const delay = Math.random() * 10;
+      const scale = 0.6 + Math.random() * 0.8;
+    
+      p.style.left = left + '%';
+      p.style.animationDuration = duration + 's';
+      p.style.animationDelay = '-' + delay + 's';
+      p.style.transform = `scale(${scale})`;
+    
+      container.appendChild(p);
+    }
+    </script>  
+    
 </head>
 
 <body>
