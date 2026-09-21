@@ -20,12 +20,13 @@
     <link rel="alternate" hreflang="ko" href="https://hwaran-tattoo.com/ko/index.html">
     <link rel="alternate" hreflang="x-default" href="https://hwaran-tattoo.com/index.html">
 
-        <script>
-    (function(){
-      try {
+     <script>
+        (function(){
+        var page = location.pathname.split('/').pop() || 'index.html';
+        try {
         var pref = localStorage.getItem('hr_lang');
         if (pref === 'ko') {
-          location.replace('ko/' + location.pathname.split('/').pop());
+          location.replace('ko/' + page);
           return;
         }
         if (!pref) {
@@ -33,16 +34,31 @@
             .then(function(r){ return r.json(); })
             .then(function(d){
               if (d && d.country_code === 'KR') {
-                location.replace('ko/' + location.pathname.split('/').pop());
+                location.replace('ko/' + page);
               }
             })
             .catch(function(){});
         }
-      } catch(e) {}
-    })();
+        } catch(e) {}
+        })();
     </script>
         
-    <title>Hwa Ran</title>
+    <title>Hwa Ran (화란타투) | Tattoo Artist in Daejeon, Korea</title>
+    <meta name="description" content="Hwa Ran (화란타투) is a tattoo artist in Daejeon, Korea specializing in oriental, floral, abstract and sumi ink custom tattoos.">
+    <link rel="canonical" href="https://www.hwaran-tattoo.com/">
+
+    <link rel="alternate" hreflang="en" href="https://www.hwaran-tattoo.com/">
+    <link rel="alternate" hreflang="ko" href="https://www.hwaran-tattoo.com/ko/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.hwaran-tattoo.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hwa Ran">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.hwaran-tattoo.com/">
+    <meta property="og:title" content="Hwa Ran (화란타투) | Tattoo Artist in Daejeon, Korea">
+    <meta property="og:description" content="Oriental, floral, abstract and sumi ink custom tattoos in Daejeon, Korea.">
+    <meta property="og:image" content="https://www.hwaran-tattoo.com/img/wk7.jpeg">
+
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
